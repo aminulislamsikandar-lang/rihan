@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rihan Furniture | Guwahati</title>
+<meta name="description" content="Rihan Furniture, Guwahati. Sofas and furniture for calm, considered spaces. Visit our store at Hockey Stadium Rd, Bishnu Rabha Path.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Hanken+Grotesk:wght@300;400;500;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fffcf7;
+  --ink:#1b1713;
+  --muted:#7d746b;
+  --line:#e8e1d7;
+  --bar:#9a6a4b;
+  --pill:#2f4a8f;
+  --soft:#f1efeb;
+  --card:#f6f4f0;
+  --green:#4f8a4f;
+  --rust:#b5522b;
+  --radius:6px;
+  --max:1360px;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;
+  --ed-sans:'Hanken Grotesk',var(--sans);
+  --serif:'Instrument Serif',Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);font-size:14px;line-height:1.4;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--pill);outline-offset:2px}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+
+/* =====================================================
+   PART 1 - STORE (announcement bar, header, hero, features, bestsellers)
+   ===================================================== */
+.topbar{background:var(--bar);color:#fff;font-size:10px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:24px}
+.topbar a{text-decoration:underline;margin-left:4px}
+.topbar .right{display:flex;align-items:center;gap:14px}
+.topbar .social{display:flex;gap:8px}
+.topbar .social i{width:9px;height:9px;background:#fff;border-radius:2px;display:block}
+
+header.site{border-bottom:1px solid var(--line);background:var(--bg)}
+.head-main{display:grid;grid-template-columns:1fr minmax(240px,420px) 1fr;align-items:center;gap:24px;height:52px}
+.logo{font-size:16px;font-weight:600;letter-spacing:.16em}
+.search{display:flex;align-items:center;gap:8px;background:var(--soft);border-radius:999px;height:26px;padding:0 12px;color:var(--muted);font-size:10px}
+.search svg{width:11px;height:11px}
+.search input{border:0;background:none;outline:0;font:inherit;width:100%;color:var(--ink)}
+.actions{display:flex;justify-content:flex-end;align-items:center;gap:22px}
+.act{display:flex;align-items:center;gap:7px;line-height:1.15}
+.act small{display:block;color:var(--muted);font-size:9px}
+.act b{font-weight:500;font-size:10px}
+.act svg{width:16px;height:16px}
+.nav{display:flex;justify-content:space-between;align-items:center;height:34px;font-size:10px}
+.nav ul{list-style:none;display:flex;gap:16px}
+.nav .right{display:flex;align-items:center;gap:18px;color:#5b5551}
+.btn-design{background:var(--pill);color:#fff;border-radius:999px;height:20px;padding:0 12px;display:inline-flex;align-items:center;gap:6px;font-size:10px}
+
+.hero{margin-top:16px;position:relative;border-radius:var(--radius);overflow:hidden;height:min(52vw,520px);min-height:340px;
+  /* swap for: background:url('hero.jpg') center/cover; */
+  background:radial-gradient(60% 70% at 78% 18%,#f7ecd9 0%,transparent 60%),linear-gradient(180deg,#d9c3a5 0%,#c7ab88 55%,#a98a66 100%)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.28),rgba(0,0,0,0) 60%)}
+.hero-copy{position:absolute;left:24px;bottom:24px;z-index:2;color:#fff;max-width:620px}
+.hero-copy h1{font-size:clamp(30px,4.2vw,48px);font-weight:400;letter-spacing:-.02em;line-height:1.05;text-shadow:0 1px 18px rgba(0,0,0,.18)}
+.hero-copy .cta{display:flex;gap:8px;margin-top:16px}
+.pill{height:26px;padding:0 14px;border-radius:999px;font-size:10px;display:inline-flex;align-items:center}
+.pill.solid{background:#fff;color:var(--ink)}
+.pill.ghost{border:1px solid rgba(255,255,255,.85);color:#fff;background:rgba(255,255,255,.06)}
+.dots{position:absolute;left:50%;bottom:12px;transform:translateX(-50%);z-index:2;display:flex;align-items:center;gap:6px;color:#fff;font-size:10px}
+.dots i{width:7px;height:7px;border-radius:50%;border:1px solid #fff;display:block}
+.dots i.on{background:#fff}
+
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding:18px 0 22px}
+.feat{display:flex;gap:10px;align-items:flex-start}
+.feat svg{width:22px;height:22px;flex:none;color:var(--bar)}
+.feat b{display:block;font-size:10px;font-weight:500}
+.feat span{display:block;font-size:9px;color:var(--muted);margin-top:2px}
+
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-top:6px}
+.eyebrow{font-size:9px;color:var(--muted)}
+.sec-head h2{font-size:22px;font-weight:400;letter-spacing:-.01em;margin-top:2px}
+.chips{display:flex;gap:8px}
+.chip{height:24px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-size:10px;background:#fff}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.row{display:flex;gap:10px;margin-top:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;scrollbar-width:none}
+.row::-webkit-scrollbar{display:none}
+.product{flex:0 0 calc((100% - 30px)/4 - 6px);min-width:220px;scroll-snap-align:start}
+.thumb{position:relative;background:var(--card);border-radius:var(--radius);aspect-ratio:1/1.2;display:flex;align-items:center;justify-content:center}
+.badges{position:absolute;top:6px;right:6px;display:flex;flex-direction:column;align-items:flex-end;gap:3px}
+.badge{font-size:6px;font-weight:600;letter-spacing:.06em;padding:2px 4px;border-radius:2px}
+.badge.best{background:#f0c9a0;color:#7a4a1e}
+.badge.new{background:var(--pill);color:#fff}
+.badge.excl{background:#111;color:#fff}
+.add{position:absolute;right:8px;bottom:8px;width:22px;height:22px;border-radius:50%;background:var(--ink);color:#fff;display:grid;place-items:center}
+.add svg{width:11px;height:11px}
+.meta{padding:8px 2px 0}
+.meta .brand{font-size:8px;color:var(--muted)}
+.meta .name{font-size:10px;font-weight:500;margin-top:2px}
+.meta .price{font-size:10px;margin-top:1px}
+.meta .price sup{font-size:6px}
+.stock{display:flex;align-items:center;gap:4px;font-size:7px;color:var(--green);margin-top:6px}
+.stock i{width:4px;height:4px;border-radius:50%;background:var(--green);display:block}
+.view-all{display:flex;justify-content:center;margin-top:10px}
+.view-all a{border:1px solid var(--line);border-radius:999px;height:18px;padding:0 12px;font-size:8px;display:inline-flex;align-items:center;gap:4px}
+
+.sofa{--c:#5c6b2e;position:relative;width:78%;height:34%}
+.sofa .back{position:absolute;left:8%;right:8%;top:0;height:60%;background:var(--c);border-radius:10px 10px 4px 4px;filter:brightness(.94)}
+.sofa .seat{position:absolute;left:4%;right:4%;top:42%;height:34%;background:var(--c);border-radius:8px}
+.sofa .arm{position:absolute;top:22%;width:12%;height:54%;background:var(--c);border-radius:12px;filter:brightness(.88)}
+.sofa .arm.l{left:0}.sofa .arm.r{right:0}
+.sofa .leg{position:absolute;bottom:-14%;width:2.5%;height:16%;background:#b98d55;border-radius:2px}
+.sofa .leg.a{left:12%}.sofa .leg.b{right:12%}
+.sofa.round .back{border-radius:50% 50% 8px 8px/70% 70% 8px 8px}
+.sofa.round .arm{border-radius:50%}
+.sofa.round .leg{display:none}
+
+/* =====================================================
+   PART 2 - EDITORIAL BRAND STORY (everything scoped under .ed)
+   ===================================================== */
+.ed{font-family:var(--ed-sans);font-weight:300;line-height:1.5;margin-top:72px;border-top:1px solid var(--line)}
+.ed small{font-size:11px;color:var(--muted);font-weight:400}
+.ph{position:relative;overflow:hidden;background:linear-gradient(135deg,#d8c7b0,#b89c7e)}
+.ph.warm{background:linear-gradient(120deg,#e9dccb 0%,#cdb496 55%,#a9805b 100%)}
+.ph.rust{background:linear-gradient(160deg,#e8dcc9 0%,#c9a98a 45%,#b5522b 100%)}
+.ph.dark{background:linear-gradient(135deg,#4b372b,#1d1611 60%,#6b4a35)}
+.ph.soft{background:linear-gradient(160deg,#d9cfc2,#b4a592)}
+.ph.face{background:radial-gradient(circle at 50% 38%,#e7d8c8 0 22%,transparent 23%),linear-gradient(180deg,#3a2f28,#1c1612)}
+
+.ed-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start;padding:48px 0 28px}
+.ed-hero h2{font-size:clamp(34px,4.4vw,56px);font-weight:300;letter-spacing:-.03em;line-height:1.08}
+.ed-side{display:grid;grid-template-columns:130px 1fr;gap:14px;align-items:start;margin-top:8px}
+.ed-side .ph{aspect-ratio:1.4/1}
+.ed-side p{font-size:9px;color:var(--muted);line-height:1.5}
+.wide{aspect-ratio:2.6/1;width:100%}
+.wide-caps{display:flex;justify-content:space-between;margin-top:6px}
+
+.mission{display:grid;grid-template-columns:1fr 1fr;gap:40px;padding:60px 0}
+.mission .tall{aspect-ratio:1/1.12}
+.mission-copy{display:flex;flex-direction:column;justify-content:space-between;gap:28px}
+.lead{font-size:clamp(17px,1.7vw,22px);line-height:1.35;letter-spacing:-.01em;max-width:30ch;margin-left:auto}
+.lead em{font-family:var(--serif);font-style:italic;font-weight:400;font-size:1.08em}
+.index{font-family:var(--serif);font-style:italic;font-size:22px}
+.mission-foot{display:grid;grid-template-columns:1fr 150px;gap:20px;align-items:end}
+.mission-foot p{font-size:8px;color:var(--muted);line-height:1.6;max-width:44ch}
+.mission-foot .ph{aspect-ratio:1/1.05}
+
+.lines{display:grid;grid-template-columns:1fr 1.05fr;gap:20px;border-top:1px solid var(--line);padding:48px 0}
+.lines-copy{display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.lines-copy .lead{font-size:14px;text-align:right;letter-spacing:0}
+.orbit{width:150px;height:110px;opacity:.55}
+.lines-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.lines-foot p{font-size:7px;color:var(--muted);max-width:34ch;line-height:1.6}
+.arrow{width:26px;height:26px;border:1px solid var(--line);border-radius:50%;display:grid;place-items:center;font-size:11px;color:var(--muted);flex:none}
+.arrow:hover{border-color:var(--rust);color:var(--rust)}
+.lines .ph{aspect-ratio:1/1.15}
+
+.band{position:relative;min-height:420px;color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:22px 0 26px}
+.band::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.05) 45%,rgba(0,0,0,.45))}
+.band>.wrap{position:relative;width:100%}
+.band h2{font-size:12px;font-weight:300;max-width:22ch;line-height:1.4}
+.band .tag{position:absolute;left:46%;top:36%;font-size:7px;line-height:1.4;display:flex;gap:8px}
+.band .tag i{font-family:var(--serif);font-size:12px}
+.band .closing{text-align:right;font-size:11px;line-height:1.4;margin-left:auto;max-width:20ch}
+
+.hands{display:grid;grid-template-columns:1fr 1.3fr;gap:32px;padding:44px 0 28px;align-items:start}
+.hands .lead{font-size:12px;max-width:26ch;line-height:1.45;text-align:right;letter-spacing:0}
+.hands .fine{font-size:6px;color:var(--muted);line-height:1.6;max-width:70ch}
+.steps{display:flex;gap:6px;justify-content:flex-end;margin-top:12px}
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding-bottom:60px}
+.team .ph{aspect-ratio:3/4}
+.team figcaption{font-size:10px;margin-top:6px}
+.team figcaption small{display:block}
+
+/* =====================================================
+   FOOTER (merged: brand + the editorial header's link columns)
+   ===================================================== */
+footer.site-foot{border-top:1px solid var(--line);padding:32px 0 28px;font-size:10px;color:var(--muted)}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:24px}
+.foot-grid .logo{color:var(--ink);display:block;margin-bottom:6px}
+.foot-menu{list-style:none;line-height:2}
+.foot-menu a:hover{color:var(--rust)}
+.copy{margin-top:28px;display:flex;justify-content:space-between}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .head-main{grid-template-columns:auto 1fr auto;gap:12px}
+  .features{grid-template-columns:repeat(2,1fr)}
+  .nav .right a:not(.btn-design){display:none}
+  .product{flex-basis:46%}
+}
+@media (max-width:860px){
+  .ed-hero,.mission,.lines,.hands{grid-template-columns:1fr}
+  .lead,.lines-copy .lead,.hands .lead{margin-left:0;text-align:left}
+  .wide{aspect-ratio:1.6/1}
+  .team{grid-template-columns:repeat(2,1fr)}
+  .band .tag{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .wrap{padding:0 14px}
+  .topbar .right,.search{display:none}
+  .head-main{grid-template-columns:1fr auto}
+  .nav ul{gap:12px;overflow-x:auto}
+  .features{gap:14px}
+  .product{flex-basis:70%}
+  .sec-head{flex-direction:column;align-items:flex-start;gap:10px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* ===== Same fonts & layout as original; only tiny text enlarged ===== */
+.topbar{font-size:12px}.topbar .wrap{height:32px}
+header.site{position:sticky;top:0;z-index:50;background:rgba(255,252,247,.9);backdrop-filter:saturate(1.4) blur(14px);transition:box-shadow .3s}
+header.site.stuck{box-shadow:0 6px 30px rgba(27,23,19,.08)}
+.head-main{height:62px}
+.search{height:32px;font-size:13px}.search svg{width:13px;height:13px}
+.act small{font-size:11px}.act b{font-size:13px}.act svg{width:19px;height:19px}
+.nav{height:42px;font-size:13px}.nav ul{gap:22px}
+.nav ul a{position:relative}.nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:1px;background:currentColor;transition:width .3s}.nav ul a:hover::after{width:100%}
+.btn-design{height:28px;font-size:12px;padding:0 14px}
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:var(--bar);z-index:100}
+.hero{background:#a98a66}
+.hero-bg{position:absolute;inset:0;background:url(hero.jpg) center/cover,linear-gradient(180deg,#d9c3a5,#a98a66);animation:kb 18s ease-out both}
+@keyframes kb{from{transform:scale(1.12)}to{transform:scale(1)}}
+.hero::after{z-index:1}
+.hero-copy h1{animation:up 1s .2s both}.hero-copy .cta{animation:up 1s .5s both}
+@keyframes up{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+.pill{height:36px;padding:0 20px;font-size:13px;transition:transform .3s,background .3s,color .3s}
+.pill:hover{transform:translateY(-3px)}.pill.solid:hover{background:var(--bar);color:#fff}.pill.ghost:hover{background:#fff;color:var(--ink)}
+.dots{display:none}
+.feat b{font-size:13px}.feat span{font-size:12px;margin-top:3px}
+.eyebrow{font-size:11px}
+.chip{height:30px;font-size:12px}
+.product{transition:transform .4s}.product:hover{transform:translateY(-6px)}
+.thumb{overflow:hidden}.pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;background:var(--card);transition:transform .7s}
+.product:hover .pimg{transform:scale(1.05)}.badges,.add{z-index:2}
+.badge{font-size:9px;padding:3px 6px}.add{width:30px;height:30px;transition:transform .3s,background .3s}.add:hover{transform:scale(1.12);background:var(--bar)}.add svg{width:14px;height:14px}
+.meta .brand{font-size:11px}.meta .name{font-size:14px}.meta .price{font-size:13px}.meta .price sup{font-size:9px}.stock{font-size:11px}
+.view-all a{height:30px;font-size:11px;padding:0 16px;transition:all .3s}.view-all a:hover{background:var(--ink);color:#fff}
+.ed small{font-size:12px}
+.ed-side{grid-template-columns:150px 1fr}.ed-side p{font-size:13px}
+.mission-foot p{font-size:12px}
+.lines-copy .lead{font-size:16px}.lines-foot p{font-size:12px}
+.arrow{width:32px;height:32px;font-size:13px;transition:all .3s}
+.band{min-height:420px}.band::before{z-index:1}.band>.wrap,.band .tag{z-index:2}
+.band h2{font-size:clamp(20px,2.2vw,28px)}.band .tag{font-size:11px}.band .tag i{font-size:14px}.band .closing{font-size:16px}
+.hands .lead{font-size:16px}.hands .fine{font-size:12px}
+.team figcaption{font-size:14px}.team figcaption small{font-size:12px}
+footer.site-foot{font-size:13px}
+/* image layer */
+.ph::after{z-index:0;content:"";position:absolute;inset:-6% 0;background:var(--img) center/cover;will-change:transform;transform:translateY(var(--py,0px)) scale(1.04);transition:transform .1s linear}
+.ph[style*="--img"]{background-color:#cdb496}
+/* scroll reveal */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.product.reveal:nth-child(2){transition-delay:.08s}.product.reveal:nth-child(3){transition-delay:.16s}.product.reveal:nth-child(4){transition-delay:.24s}
+@media (max-width:560px){.ed-side{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-bg,.hero-copy h1,.hero-copy .cta{animation:none}.ph::after{transition:none}}
+
+/* demo additions */
+.wa-float{position:fixed;right:16px;bottom:16px;z-index:90;background:#25a244;color:#fff;border-radius:50%;width:44px;height:44px;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.22);transition:transform .3s}
+.wa-float:hover{transform:translateY(-3px)}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:all .3s;z-index:120}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.noresult{display:none;margin:18px 0;color:var(--muted);font-size:14px}
+html{scroll-padding-top:120px}
+@media (max-width:560px){
+  .nav{height:40px}
+  .nav .right{display:none}
+  .nav ul{overflow-x:auto;white-space:nowrap;scrollbar-width:none;gap:18px;width:100%}
+  .nav ul::-webkit-scrollbar{display:none}
+  .nav li{flex:none}
+}
+@media (min-width:1000px){.product{flex-basis:calc((100% - 40px)/5)}}
+.call-float{display:none;position:fixed;right:16px;bottom:70px;z-index:90;background:#1b1713;color:#fff;border-radius:50%;width:44px;height:44px;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+@media (max-width:900px){.call-float{display:grid}}
+</style>
+<meta name="theme-color" content="#9a6a4b">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%239a6a4b'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='38' text-anchor='middle' fill='white'%3ER%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rihan Furniture">
+<meta property="og:title" content="Rihan Furniture | Guwahati">
+<meta property="og:description" content="Sofas and furniture for calm, considered spaces. Visit us at Hockey Stadium Rd, Guwahati.">
+<meta property="og:locale" content="en_IN">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FurnitureStore", "name": "Rihan Furniture", "telephone": "+91 99572 82005", "address": {"@type": "PostalAddress", "streetAddress": "Hockey Stadium Rd, Bishnu Rabha Path, near Arian Timber, above Bharat Petroleum", "addressLocality": "Guwahati", "addressRegion": "Assam", "postalCode": "781038", "addressCountry": "IN"}, "hasMap": "https://www.google.com/maps/search/?api=1&query=Rihan+Furniture+Hockey+Stadium+Rd+Bishnu+Rabha+Path+Guwahati+781038"}</script>
+<noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
+</head>
+<body>
+
+<!-- ============ ANNOUNCEMENT BAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <div>Try our free design service <a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener">Learn more</a></div>
+    <div class="right">
+      <a href="tel:+919957282005" style="text-decoration:none;margin:0">Call: 099572 82005</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Rihan+Furniture+Hockey+Stadium+Rd+Bishnu+Rabha+Path+Guwahati+781038" target="_blank" rel="noopener" style="margin:0">Get directions</a>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="site">
+  <div class="wrap">
+    <div class="head-main">
+      <a href="#" class="logo" aria-label="Rihan Furniture home">RIHAN</a>
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input type="search" placeholder="Search for…" aria-label="Search">
+      </label>
+      <div class="actions">
+        <a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener" class="act">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></svg>
+          <span><small>Need help?</small><b>WhatsApp</b></span>
+        </a>
+        <a href="#shop-sofas" class="act" id="cartLink">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 4h2l2.5 11h10L20 7H6"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg>
+          <span><small id="cartCount">Cart (0)</small><b id="cartTotal">₹0</b></span>
+        </a>
+      </div>
+    </div>
+    <nav class="nav" aria-label="Main">
+      <ul>
+        <li><a href="#shop">Shop all</a></li>
+        <li><a href="#story">Explore</a></li>
+        <li><a href="#shop-sofas">Collections</a></li>
+        <li><a href="#story">Editorial</a></li>
+        <li><a href="#mission">About</a></li>
+        <li><a href="#contact" style="color:var(--bar)">Contact</a></li>
+      </ul>
+      <div class="right">
+        <a href="tel:+919957282005">Call us</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rihan+Furniture+Hockey+Stadium+Rd+Bishnu+Rabha+Path+Guwahati+781038" target="_blank" rel="noopener">Directions</a>
+        <a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener" class="btn-design">&#10022; Design service</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ STORE: HERO + FEATURES + BESTSELLERS ============ -->
+<div class="wrap" id="shop">
+
+  <div class="progress"></div>
+  <section class="hero" aria-label="Featured"><div class="hero-bg"></div>
+    <div class="hero-copy">
+      <h1>Furniture for calm,<br>considered spaces</h1>
+      <div class="cta">
+        <a href="#shop-sofas" class="pill solid">Shop sofas</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=Rihan+Furniture+Hockey+Stadium+Rd+Bishnu+Rabha+Path+Guwahati+781038" target="_blank" rel="noopener" class="pill ghost">Visit our store</a>
+      </div>
+    </div>
+    <div class="dots"><span>&lsaquo;</span><i class="on"></i><i></i><span>&rsaquo;</span></div>
+  </section>
+
+  <section class="features reveal">
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 6h11v10H2zM13 9h5l3 3v4h-8"/><circle cx="6" cy="18" r="1.6"/><circle cx="17" cy="18" r="1.6"/></svg>
+      <div><b>Furniture Delivery</b><span>Flexible options for large items</span></div>
+    </div>
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 12h8M13 9l3 3-3 3"/></svg>
+      <div><b>Easy Returns</b><span>Clear support for eligible items</span></div>
+    </div>
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 20 20 6a3 3 0 0 0-4-4L2 16z" transform="translate(1 1) scale(.9)"/><path d="m11 8 5 5"/></svg>
+      <div><b>Material Guidance</b><span>Care tips for everyday living</span></div>
+    </div>
+    <div class="feat">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 5h11v8H9l-3 3v-3H4zM15 9h5v8h-2v3l-3-3h-5v-2"/></svg>
+      <div><b>Styling Support</b><span>Personalized help for your space</span></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="best" id="shop-sofas">
+    <div class="sec-head reveal">
+      <div>
+        <div class="eyebrow">Bestsellers</div>
+        <h2 id="best">Most-loved pieces for modern homes</h2>
+      </div>
+      <div class="chips"><a class="chip on" href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener" style="display:inline-flex;align-items:center">WhatsApp us</a></div>
+    </div>
+
+    <div class="row">
+      <article class="product reveal">
+        <div class="thumb">
+          <div class="badges"><span class="badge best">BESTSELLER</span><span class="badge new">NEW</span></div>
+          <img class="pimg" src="sofa-kent.jpg" alt="Kent Sofa" loading="lazy" onerror="this.remove()"><div class="sofa" style="--c:#5c6b2e"><span class="back"></span><span class="arm l"></span><span class="arm r"></span><span class="seat"></span><span class="leg a"></span><span class="leg b"></span></div>
+          <button class="add" aria-label="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.5 11h10L20 7H6"/></svg></button>
+        </div>
+        <div class="meta"><div class="brand">Rihan Furniture</div><div class="name">Kent Sofa</div><div class="price" data-price="49999">₹49,999</div><div class="stock"><i></i>In stock</div></div>
+      </article>
+      <article class="product reveal">
+        <div class="thumb">
+          <div class="badges"><span class="badge excl">EXCLUSIVE</span></div>
+          <img class="pimg" src="sofa-luna.jpg" alt="Luna Sofa" loading="lazy" onerror="this.remove()"><div class="sofa round" style="--c:#c99562"><span class="back"></span><span class="arm l"></span><span class="arm r"></span><span class="seat"></span></div>
+          <button class="add" aria-label="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.5 11h10L20 7H6"/></svg></button>
+        </div>
+        <div class="meta"><div class="brand">Rihan Furniture</div><div class="name">Luna Sofa</div><div class="price" data-price="54999">₹54,999</div><div class="stock"><i></i>In stock</div></div>
+      </article>
+      <article class="product reveal">
+        <div class="thumb">
+          <div class="badges"><span class="badge best">BESTSELLER</span></div>
+          <img class="pimg" src="sofa-cashel.jpg" alt="Cashel Sofa" loading="lazy" onerror="this.remove()"><div class="sofa" style="--c:#b8442b"><span class="back"></span><span class="arm l"></span><span class="arm r"></span><span class="seat"></span></div>
+          <button class="add" aria-label="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.5 11h10L20 7H6"/></svg></button>
+        </div>
+        <div class="meta"><div class="brand">Rihan Furniture</div><div class="name">Cashel Sofa</div><div class="price" data-price="79999">₹79,999</div><div class="stock"><i></i>In stock</div></div>
+      </article>
+      <article class="product reveal">
+        <div class="thumb">
+          <img class="pimg" src="sofa-arcus.jpg" alt="Arcus Sofa" loading="lazy" onerror="this.remove()"><div class="sofa round" style="--c:#e3dccf"><span class="back"></span><span class="arm l"></span><span class="arm r"></span><span class="seat"></span></div>
+          <button class="add" aria-label="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.5 11h10L20 7H6"/></svg></button>
+        </div>
+        <div class="meta"><div class="brand">Rihan Furniture</div><div class="name">Arcus Sofa</div><div class="price" data-price="69999">₹69,999</div><div class="stock"><i></i>In stock</div></div>
+      </article>
+      <article class="product reveal">
+        <div class="thumb">
+          <img class="pimg" src="sofa-lowen.jpg" alt="Lowen Sofa" loading="lazy" onerror="this.remove()"><div class="sofa" style="--c:#6d6a64"><span class="back"></span><span class="arm l"></span><span class="arm r"></span><span class="seat"></span><span class="leg a"></span><span class="leg b"></span></div>
+          <button class="add" aria-label="Add to cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.5 11h10L20 7H6"/></svg></button>
+        </div>
+        <div class="meta"><div class="brand">Rihan Furniture</div><div class="name">Lowen Sofa</div><div class="price" data-price="44999">₹44,999</div><div class="stock"><i></i>In stock</div></div>
+      </article>
+    </div>
+    <p class="noresult" id="noresult">No products found. Please call or WhatsApp us and we will help.</p>
+    <div class="view-all"><a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture&amp;" target="_blank" rel="noopener">Ask for full catalogue &rarr;</a></div>
+  </section>
+</div>
+
+<!-- ============ EDITORIAL: BRAND STORY ============ -->
+<div class="ed" id="story">
+  <div class="wrap">
+
+    <section class="ed-hero reveal">
+      <h2>Quiet Forms &mdash;<br>Loud in Meaning</h2>
+      <div class="ed-side">
+        <div class="ph rust" role="img" aria-label="Rust sofa" style="--img:url(ed-rust-sofa.jpg)"></div>
+        <p>Our furniture doesn&rsquo;t speak loudly. It whispers elegance, balance, and precision &mdash; crafted to last, designed to feel.</p>
+      </div>
+    </section>
+
+    <div class="ph warm wide reveal" role="img" aria-label="Living and dining room" style="--img:url(ed-living-dining.jpg)"></div>
+    <div class="wide-caps"><small>Visual Archive</small><small>Interior Stillness</small><small>Design Atmosphere</small></div>
+
+    <section class="mission reveal" id="mission">
+      <div class="ph rust tall" role="img" aria-label="Rust curved sofa" style="--img:url(mission-sofa.jpg)"></div>
+      <div class="mission-copy">
+        <p class="lead"><em>Our mission is to create furniture</em> that merges Rihan craftsmanship with contemporary sensibility &mdash; pieces defined by clarity, comfort, and care.</p>
+        <div class="index">0</div>
+        <div class="mission-foot">
+          <p>Our story begins in stillness &mdash; a quiet space where design takes shape slowly, and nothing is rushed. We work with care, guided by material, proportion, and feeling &mdash; creating pieces that belong, endure, and speak softly within the lives they enter.</p>
+          <div class="ph soft" role="img" aria-label="Bedside detail" style="--img:url(mission-bedside.jpg)"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="lines reveal">
+      <div class="lines-copy">
+        <p class="lead">A language of lines and light, crafted with quiet precision &mdash; designed to bring calm, belong in space, and evolve over time.</p>
+        <svg class="orbit" viewBox="0 0 160 120" fill="none" stroke="#b9ada0" stroke-width=".6" aria-hidden="true">
+          <ellipse cx="80" cy="60" rx="70" ry="42"/><ellipse cx="80" cy="60" rx="58" ry="50" transform="rotate(30 80 60)"/>
+          <ellipse cx="80" cy="60" rx="64" ry="34" transform="rotate(-25 80 60)"/><ellipse cx="80" cy="60" rx="40" ry="52" transform="rotate(70 80 60)"/>
+        </svg>
+        <div class="lines-foot">
+          <p>We create with intention &mdash; combining timeless form, refined materials, and quiet detail to shape furniture that brings presence, warmth, and ease to everyday spaces.</p>
+          <a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener" class="arrow" aria-label="Chat with us on WhatsApp">&nearr;</a>
+        </div>
+      </div>
+      <div class="ph dark" role="img" aria-label="Bedroom with lamp" style="--img:url(lines-bedroom.jpg)"></div>
+    </section>
+  </div>
+
+  <section class="band ph dark" aria-label="Our mission" style="--img:url(mission-band.jpg)">
+    <div class="wrap"><h2>Our mission is to create pieces that feel permanent</h2></div>
+    <div class="tag"><i>0</i><span>Studio Thinking &mdash;<br>Artisan Execution</span></div>
+    <div class="wrap"><p class="closing">not just in durability but in presence.</p></div>
+  </section>
+
+  <div class="wrap">
+    <section class="hands reveal">
+      <p class="lead">Behind every piece is a human hand &mdash; a team of specialists united by craft, curiosity, and attention to what truly matters.</p>
+      <div>
+        <p class="fine">We are a studio of designers, artisans, and quiet thinkers &mdash; each dedicated to building objects that belong, endure, and speak softly in the spaces they inhabit. Together we shape pieces with patience, proportion, and care.</p>
+      </div>
+    </section>
+
+    <section class="team reveal" aria-label="Team">
+      <figure class="reveal"><div class="ph face" role="img" aria-label="Team member" style="--img:url(team-rihan.jpg)"></div><figcaption>Rihan<small>Founder</small></figcaption></figure>
+      <figure class="reveal"><div class="ph face" role="img" aria-label="Team member" style="--img:url(team-designer.jpg)"></div><figcaption>Lead designer<small>Rihan Furniture</small></figcaption></figure>
+      <figure class="reveal"><div class="ph face" role="img" aria-label="Team member" style="--img:url(team-craftsman.jpg)"></div><figcaption>Master craftsman<small>Rihan Furniture</small></figcaption></figure>
+      <figure class="reveal"><div class="ph face" role="img" aria-label="Team member" style="--img:url(team-stylist.jpg)"></div><figcaption>Interior stylist<small>Rihan Furniture</small></figcaption></figure>
+    </section>
+  </div>
+</div>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-foot" id="contact">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a href="#" class="logo">RIHAN FURNITURE</a>
+        Hockey Stadium Rd, Bishnu Rabha Path,<br>near Arian Timber, above Bharat Petroleum,<br>Guwahati, Assam 781038<br><a href="tel:+919957282005">+91 99572 82005</a>
+      </div>
+      <ul class="foot-menu">
+        <li><a href="#">Home</a></li><li><a href="#mission">About Us</a></li><li><a href="#shop-sofas">Products</a></li><li><a href="#story">Gallery</a></li>
+      </ul>
+      <ul class="foot-menu">
+        <li><a href="tel:+919957282005">Call us</a></li><li><a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener">WhatsApp</a></li><li><a href="https://www.google.com/maps/search/?api=1&query=Rihan+Furniture+Hockey+Stadium+Rd+Bishnu+Rabha+Path+Guwahati+781038" target="_blank" rel="noopener">Get directions</a></li>
+      </ul>
+      <ul class="foot-menu">
+        <li><a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener">Free design service</a></li><li><a href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener">Delivery enquiry</a></li>
+      </ul>
+    </div>
+    <div class="copy"><span>&copy; 2026 Rihan Furniture</span><span>Guwahati, Assam, India</span></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+var hd=document.querySelector('header.site'),pb=document.querySelector('.progress');
+var ph=[].slice.call(document.querySelectorAll('.ph[style*="--img"]'));
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function onScroll(){
+  var y=scrollY,h=document.documentElement.scrollHeight-innerHeight;
+  hd.classList.toggle('stuck',y>40);pb.style.width=(h>0?y/h*100:0)+'%';
+  if(rm)return;
+  ph.forEach(function(e){var r=e.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;
+    e.style.setProperty('--py',((r.top+r.height/2-innerHeight/2)*-0.06).toFixed(1)+'px')});
+}
+addEventListener('scroll',function(){requestAnimationFrame(onScroll)},{passive:true});onScroll();
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(e){io.observe(e)});
+})();
+</script>
+<a class="wa-float" href="https://wa.me/919957282005?text=Hello%20Rihan%20Furniture%2C%20I%20want%20to%20know%20more%20about%20your%20furniture" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8.5 10.5h.01M12 10.5h.01M15.5 10.5h.01" stroke-width="2.4"/></svg></a>
+<a class="call-float" href="tel:+919957282005" aria-label="Call Rihan Furniture"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+<div class="toast" id="toast" role="status"></div>
+<script>
+(function(){
+var fmt=function(n){return '\u20b9'+Number(n).toLocaleString('en-IN')};
+var items=[],count=0,total=0,toast=document.getElementById('toast'),tt;
+document.querySelectorAll('.product .add').forEach(function(b){b.setAttribute('aria-label','Add '+b.closest('.product').querySelector('.name').textContent+' to cart');
+  b.addEventListener('click',function(){
+    var a=b.closest('.product'),n=a.querySelector('.name').textContent,p=+a.querySelector('.price').dataset.price||0;
+    count++;total+=p;items.push(n+" - "+fmt(p));
+    document.getElementById('cartCount').textContent='Cart ('+count+')';
+    document.getElementById('cartTotal').textContent=fmt(total);
+    toast.textContent=n+' added to cart';toast.classList.add('show');
+    clearTimeout(tt);tt=setTimeout(function(){toast.classList.remove('show')},1800);
+  });
+});
+document.getElementById('cartLink').addEventListener('click',function(e){
+  if(!count){return}
+  e.preventDefault();
+  window.open('https://wa.me/919957282005?text='+encodeURIComponent('Hello Rihan Furniture, I want to order:\n'+items.join('\n')+'\nTotal: '+fmt(total)),'_blank','noopener');
+});
+var q=document.querySelector('.search input');
+if(q)q.addEventListener('input',function(){
+  var v=q.value.trim().toLowerCase(),shown=0;
+  document.querySelectorAll('.product').forEach(function(a){
+    var m=!v||a.textContent.toLowerCase().indexOf(v)>-1;
+    a.style.display=m?'':'none';if(m)shown++;
+  });
+  document.getElementById('noresult').style.display=shown?'none':'block';
+});
+})();
+</script>
+</body>
+</html>
